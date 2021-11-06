@@ -8,7 +8,7 @@ function HangMan() {
     
     const errors = useSelector(state => state.game.value.errors)
     return (
-        <div style={{maxWidth:"300px", maxHeight:"300px"}}> 
+        <div style={hangManStyle} > 
         <svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" >
             <rect fill="#053544" width="10" height="400" x="20" y="0" stroke = "rgb(0,0,0)" />
             <rect fill="#053544" width="300" height="10" x="20" y="0" stroke = "rgb(0,0,0)"  />
@@ -43,5 +43,13 @@ function HangMan() {
         </div>
     )
 }
+
+const hangManStyle = {
+    maxWidth:"300px", 
+    maxHeight:"270px",
+    width:"50%",
+    height:"50%"
+}
+
 
 export default HangMan

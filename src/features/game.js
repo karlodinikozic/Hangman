@@ -3,7 +3,6 @@ import { isALetter } from '../functions/gameFunctions';
 
 
 const createInitMap = (str)=>{
-    console.log(str)
     const mapa = {}
     const arr = str.toLowerCase().split("");
     arr.forEach(element => {

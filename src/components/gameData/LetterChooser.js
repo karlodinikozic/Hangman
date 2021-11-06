@@ -13,7 +13,6 @@ function LetterChooser() {
     
 
 
-    const errors = useSelector(state => state.game.value.errors)
     const done = useSelector(state => state.game.value.done)
 
     useEffect(() => {
@@ -36,21 +35,14 @@ function LetterChooser() {
     }
 
     return (
-        <div>
+        <div className="letterChooserContainer">
 
-            <div style={{display:"flex",alignItems:"center",flexWrap:"wrap",justifyContent:"center"}}>
+            <div className="letterChooser">
                 {
                     alphabet.map((el,id)=>{
                         return  <LetterButton letter={el} key={id}/>
                     })
                 }
-            </div>
-
-            {
-                errors
-            }
-            <div>
-                {done?"Done":"Not Done"}
             </div>
         </div>
     )

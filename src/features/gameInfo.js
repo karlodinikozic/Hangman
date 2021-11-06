@@ -23,12 +23,12 @@ export const fetchGameInfo = createAsyncThunk(
             const {_id,content,length} = response.data
             
 
-            //TODO FIX ALL OF THIS
+  
             const gameInfo = {
                 quoteId:_id,
                 content: content,
                 length:length,
-                uniqueCharacters: numOfUniqueLetters(content), //TODO FIX special chars and space
+                uniqueCharacters: numOfUniqueLetters(content), 
                 duration:0
             }
            

@@ -1,0 +1,124 @@
+.header{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    color:rgb(48, 107, 216);
+    text-shadow: 0.08em 0.05em rgb(39, 88, 179);
+}
+
+.header h2{
+    margin-bottom: 2px;
+
+}
+
+.header h2:first-child{
+    text-decoration: underline;
+}
+
+.spinner{
+    align-self: center;
+    justify-self: center;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    max-width: 960px;
+}
+.game{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+.hangman{
+    padding: 5px;
+    
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    box-shadow: 0 2 #888888;
+}
+.showError{
+    color: rgb(204, 53, 27);
+    stroke: darkcyan;
+    stroke-width: 1em;
+    font-size: larger;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: 1px 1px rgb(88, 22, 10);
+    text-align: center;
+}
+.letterChooserContainer{
+    margin-top: 2em;
+}
+
+.letterChooser{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.letter{
+    border-bottom:1px solid black;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
+.letterButton button{
+    color:white;
+    background-color: rgb(48, 107, 216);
+    border: 1px solid rgb(19, 79, 190);
+    font-kerning: normal;
+    font-size: 1.5em;
+    width: 2em;
+    padding: 5px;
+    border-radius: 0.4em;
+    margin: 2px;
+    transition: color 0.5s, border-color 0.25s, box-shadow 0.25s,transform 0.15s;
+
+}
+
+.letterButton button:hover{
+    transform: scale(1.1)  translateY(-0.15em);
+    background-color: rgb(249, 251, 255) ;
+    color: rgb(77, 9, 238);
+    font-size: x-large;
+    
+}
+
+
+.restartButton{
+    align-self: flex-end;
+    margin-right: 1em;
+    margin-top: 1.3em;
+}
+
+
+.restartButton button{
+  
+    background-color: rgb(216, 82, 48);
+    border: 1px solid rgb(190, 19, 42);
+    padding: 12px;
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s,transform 0.25s;
+}
+
+.restartButton button:hover{
+    
+    background-color: rgb(252, 53, 4);
+    border-color:  rgb(255, 4, 38);
+    box-shadow: 0 0.5em 0.5em -0.4em #ff745c;
+    transform: translateY(-0.25em);
+}
+.restartButton img{
+    width: 2em;
+}

@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchGameInfo } from '../features/gameInfo';
 import Game from './gameData/Game';
 import HighScore from './HighScore';
-
+import '../style/main.css'
+import Spinner from './Spinner';
 
 function Main() {
     
@@ -21,9 +22,9 @@ function Main() {
     
 
     if(gameLoadingState.loading != 'loaded' ){
-        //TODO https://www.davidhu.io/react-spinners/
-        //TODO SLIK TRANSITIONS https://css-tricks.com/animating-between-views-in-react/
-        return <h1>Loading ... </h1>
+
+        //TODO https://www.framer.com/docs/animate-presence/
+        return <Spinner/>
     }
 
 
@@ -32,8 +33,11 @@ function Main() {
     }
 
     return (
-        <div>
-                <h1>Hello {userName} ! :D</h1>
+        <div className='main'>
+                <div className="header">
+                    <h2>Welcome to Hangman Game</h2>
+                    <h2>Username: {userName}</h2>
+                </div>
                 <br/>
                 <Game gameInfo ={gameLoadingState.gameInfo}/>
         </div>
@@ -41,3 +45,5 @@ function Main() {
 }
 
 export default Main
+
+

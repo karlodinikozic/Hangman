@@ -1,7 +1,9 @@
+//checks if a character is a letter
 export const isALetter = (char)=>{
     return char.match(/[a-z]/i);
 }
 
+//calculates score based on length,errors,time and number of unique chars 
 export const smarterCalulateScore = (L=0,U=0,E=0,T=0)=>{
 
     //ERROR 100 | UNIQ 100 | LENGHT 100 | T 
@@ -29,19 +31,16 @@ export const smarterCalulateScore = (L=0,U=0,E=0,T=0)=>{
 
 }
 
+//calculates score based on number of errors
 export const basicCalculateScore = (errors)=>{
 
     return 100/(errors + 1)
 }
 
+
+//returns a number of unique letters from a string
 export const numOfUniqueLetters = (str) => {
-
-    console.log(str)
-
-    return [... new Set(str
-        .toLowerCase()
-        .split(""))]
-        .filter((el) => isALetter(el)).length
+    return  [ ...new Set(str.toLowerCase().trim().split("").filter(i=>isALetter(i)))].length
 }
 
 

@@ -13,8 +13,8 @@ function LetterButton(props) {
     }
 
     return (
-        <div >
-            <button onClick={handleOnButtonPress} disabled={gameMap[letter.toLowerCase()]} >{letter}</button>
+        <div className="letterButton" style={{opacity:gameMap[letter.toLowerCase()]?'0':'1'}}>
+            <button  onClick={handleOnButtonPress} >{letter}</button>
         </div>
     )
 }

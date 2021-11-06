@@ -1,0 +1,71 @@
+.highscore {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+
+
+  height: 100px;       /* Just for the demo          */
+  overflow-y: auto;    /* Trigger vertical scroll    */
+  overflow-x: hidden; 
+}
+
+
+.highscore td,
+.highscore th {
+  border: 1px solid #ddd;
+  padding: 8px;
+
+}
+
+.highscore tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.highscore tr:hover {
+  background-color: #ddd;
+}
+
+.highscore th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(48, 107, 216);
+  color: white;
+}
+
+.sort  {
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sort button{
+  color:white;
+  background-color: rgb(48, 107, 216);
+  border: 1px solid rgb(19, 79, 190);
+  font-kerning: normal;
+  font-size: 1.5em;
+
+  padding: 5px;
+  border-radius: 0.4em;
+  margin: 2px;
+  transition: color 0.5s, border-color 0.25s, box-shadow 0.25s,transform 0.15s;
+}
+
+.sort button:hover{
+  transform: scale(1.1)  translateY(-0.15em);
+    background-color: rgb(249, 251, 255) ;
+    color: rgb(77, 9, 238);
+    font-size: x-large;
+    margin-top:10px ;
+    transition: color 0.1s, border-color 0.25s, box-shadow 0.25s,transform 0.15s;
+}
+.sort button:active{
+  
+    background-color: rgb(77, 9, 238) ;
+    color: rgb(249, 251, 255);
+
+  
+}
+

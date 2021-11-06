@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import {BrowserRouter as Router,Switch,Route,Redirect} from 'react-router-dom'
-import Login from './components/Login';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+
 import Main from './components/Main';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import './app.css'
 import { login } from './features/user';
 
@@ -36,11 +36,9 @@ function App() {
         <Switch>
           <Route exact path="/"  >
             <Main/>
-            {/* {
-              userName == "" ? <Redirect to='/login'/> : <Main /> 
-            } */}
+
           </Route>
-          {/* <Route exact path="/login" component={Login} /> */}
+
         </Switch>
       </Router>      
     </div>

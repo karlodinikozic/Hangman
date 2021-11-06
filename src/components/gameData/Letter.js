@@ -9,14 +9,15 @@ function Letter(props) {
 
     const LetterModified = ({letter})=>{
         if(isALetter(letter)){
-            return <React.Fragment>
+            return <div className='letter'> 
                 {/* <div hidden={gameMap[letter]}>{letter}</div> */}
                 <div style={{opacity: gameMap[letter.toLowerCase()]?1:0.2}}>{letter}</div>
-                <div>___</div>
-            </React.Fragment>
+                
+            </div>
         }
-        else if(letter == ""){
-            <span style={{opacity:0}}>space</span>
+        else if(letter == " "){
+            
+           return <span style={{opacity:0}}>pa</span>
         }
         return<div>{letter}</div>
     }
