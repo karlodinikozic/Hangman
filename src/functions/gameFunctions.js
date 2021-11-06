@@ -1,0 +1,49 @@
+export const isALetter = (char)=>{
+    return char.match(/[a-z]/i);
+}
+
+export const smarterCalulateScore = (L=0,U=0,E=0,T=0)=>{
+
+    //ERROR 100 | UNIQ 100 | LENGHT 100 | T 
+
+    //MAX ERORR = 26 
+
+    //MAX UNIQUE  = 26
+
+    //qoute should be most certainly unde 10000 char
+    //MAX LENGHT = 10000
+
+    //It's reasonable to think it will be done less then day
+    //MAX TIME =  86,400,000 milisecond in a day 
+
+    let str =""
+    //easiest way 
+    str+= ((26-E)+".");
+  
+    str+= "0"+((U/26).toFixed(2)*100)
+
+    str+= "0"+((L/10000).toFixed(4)*10000)
+    str+= "000"+(86400000 - T)
+
+    return Number.parseFloat(str)
+
+}
+
+export const basicCalculateScore = (errors)=>{
+
+    return 100/(errors + 1)
+}
+
+export const numOfUniqueLetters = (str) => {
+
+    console.log(str)
+
+    return [... new Set(str
+        .toLowerCase()
+        .split(""))]
+        .filter((el) => isALetter(el)).length
+}
+
+
+export default smarterCalulateScore
+
