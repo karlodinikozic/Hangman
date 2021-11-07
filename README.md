@@ -6,13 +6,36 @@
  
  <hr/>
  
+ # Used technologies
+ 
+ <ul> 
+  <li> React </li>
+  <li> React redux </li>
+  <li> Reduxjs/toolkit </li>
+  <li> react-router-dom </li>
+  <li> Jest  (for testing) </li>
+ </ul>
+ 
+ <hr/>
+ 
  # Installation
 
- <p> First clone this repository in the desired location: </p>
+ <p> First clone this repository in the desired location </p>
+ <p> Then open the contain folder and run the command: </p>
  
  ```
- npm install all
+ npm install 
 ```
+ <hr/>
+ 
+ # To run the Game
+ 
+ <p> In the containing folder run: </p>
+ 
+ ```
+ npm start
+ ```
+ 
  <hr/>
  
  # Testing
