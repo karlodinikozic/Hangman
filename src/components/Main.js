@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchGameInfo } from '../features/gameInfo';
 import Game from './gameData/Game';
-import HighScore from './HighScore';
+
 import '../style/main.css'
 import Spinner from './Spinner';
 
@@ -10,8 +10,6 @@ function Main() {
     
     const userName = useSelector((state)=>state.user.value.name)
     const gameLoadingState = useSelector((state)=>state.gameInfo.value)
-
- 
    
     const dispatch = useDispatch()
 
@@ -22,7 +20,7 @@ function Main() {
     
 
     if(gameLoadingState.loading != 'loaded' ){
-        //TODO https://www.framer.com/docs/animate-presence/
+     
         return <Spinner/>
     }
 

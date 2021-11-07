@@ -10,9 +10,6 @@ function LetterChooser() {
     const alpha = Array.from(Array(26)).map((e, i) => i + 65);
     const alphabet = alpha.map((x) => String.fromCharCode(x));
 
-    
-
-
     const done = useSelector(state => state.game.value.done)
 
     useEffect(() => {

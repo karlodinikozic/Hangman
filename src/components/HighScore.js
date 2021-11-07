@@ -130,7 +130,7 @@ function HighScore() {
 
 
 
-  //TODO CHECKOUT ID 3
+
 
   return (
     <div
