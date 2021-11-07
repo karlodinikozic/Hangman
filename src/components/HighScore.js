@@ -12,6 +12,7 @@ import "../style/highscore.css";
 import {restartGame} from'../features/game'
 
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 function HighScore() {
@@ -28,7 +29,6 @@ function HighScore() {
     const { startTime, endTime } = gameData;
     const { content, quoteId } = gameInfo.gameInfo;
 
-    console.log(content);
 
     const postObj = {
       quoteId: quoteId,
@@ -92,26 +92,42 @@ function HighScore() {
   };
 
  
-
+  let history = useHistory();
   const handleBack = ()=>{
-    console.log("hey")
-    dispatch(restartGame)
- 
+
+    dispatch(restartGame())
+    const location = {
+      pathname: '/',
+      state: { fromDashboard: true }
+    }
+
+    history.push(location)
+    history.replace(location)
   }
 
   useEffect(async () => {
     try {
       await postGameData();
       await getHighScore();
+
     } catch (error) {
-      console.log(error)
-    }
+      const location = {
+        pathname: '/',
+        state: { fromDashboard: true }
+      }
   
+      history.push(location)
+      history.replace(location)
+    }
+ 
   }, []);
 
   if (highScore.length == 0) {
     return <Spinner />;
   }
+
+
+
 
 
   //TODO CHECKOUT ID 3

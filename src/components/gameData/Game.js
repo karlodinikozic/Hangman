@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import { initMap } from '../../features/game';
 import { fetchGameInfo } from '../../features/gameInfo';
 import HangMan from './HangMan';
@@ -12,12 +12,19 @@ function Game(props) {
     const {gameInfo} = props
 
 
+
     const errors = useSelector(state => state.game.value.errors)
     
     const done = useSelector(state => state.game.value.done)
 
+        
+    const game = useSelector(state => state.game.value)
+
+
+    useEffect(()=>console.log(game),[game])
+
     const dispatch = useDispatch()
-  
+
 
     useEffect(()=>{
         dispatch(initMap(gameInfo.content))
@@ -29,7 +36,7 @@ function Game(props) {
     }
 
    if(done){
-    return <Redirect to="/highscore" />
+    return <Redirect to="/highscore"/>
    }
 
     return (

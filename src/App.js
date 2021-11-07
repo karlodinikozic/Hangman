@@ -7,6 +7,7 @@ import './app.css'
 import { login } from './features/user';
 import HighScore from './components/HighScore';
 
+
 function App() {
 
 
@@ -20,6 +21,9 @@ function App() {
     }
     return name
   }
+
+
+
 
   useEffect(async ()=>{
     const name = await checkLoginName()

@@ -47,7 +47,9 @@ export const gameSlice = createSlice({
             state.value.errors = 0  
         },
         restartGame:(state,action)=>{
-            state.value = initialStateValue
+            state.value = {value:initialStateValue}
+            state.value.mapa = {} 
+           
         }
    
 
