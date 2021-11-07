@@ -18,14 +18,16 @@ export const smarterCalulateScore = (L=0,U=0,E=0,T=0)=>{
     //It's reasonable to think it will be done less then day
     //MAX TIME =  86,400,000 milisecond in a day 
 
+ 
+    const unique = U+10;
+
+    const  length = L + 1000
     let str =""
     //easiest way 
     str+= ((26-E)+".");
-  
-    str+= "0"+((U/26).toFixed(2)*100)
-
-    str+= "0"+((L/10000).toFixed(4)*10000)
-    str+= "000"+(86400000 - T)
+    str+= unique
+    str+= length
+    str+= (86400 - Math.floor(T/100))
 
     return Number.parseFloat(str)
 
