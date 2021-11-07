@@ -9,16 +9,18 @@ import {
 import Spinner from "./Spinner.js";
 
 import "../style/highscore.css";
+import {restartGame} from'../features/game'
 
-import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function HighScore() {
   const gameData = useSelector((state) => state.game.value);
   const userData = useSelector((state) => state.user.value);
   const gameInfo = useSelector((state) => state.gameInfo.value);
 
-  const history = useHistory()
+  const  dispatch = useDispatch()
+
 
   const [highScore, setHighScore] = useState([]);
 
@@ -89,16 +91,18 @@ function HighScore() {
     setHighScore([...arr]);
   };
 
+ 
+
   const handleBack = ()=>{
-    let path = `/`;
-    history.push(path) 
+    console.log("hey")
+    dispatch(restartGame)
  
   }
 
   useEffect(async () => {
     try {
-      // await postGameData();
-      // await getHighScore();
+      await postGameData();
+      await getHighScore();
     } catch (error) {
       console.log(error)
     }
@@ -121,9 +125,8 @@ function HighScore() {
       }
     }>
 
-      <div className="back"  >
-      <button ><Link to="/"> New Game </Link></button>
-   
+      <div className="back" onClick={handleBack}>
+       <Link to="/">new Game</Link>
       </div>
 
       <table className="highscore" >

@@ -44,14 +44,16 @@ export const gameSlice = createSlice({
             state.value.mapa = createInitMap(action.payload);
             state.value.startTime = Date.now();
             state.value.done = false
-            state.value.errors = 0
-          
+            state.value.errors = 0  
+        },
+        restartGame:(state,action)=>{
+            state.value = initialStateValue
         }
    
 
     }
 })
 
-export const {initMap,changeElement} = gameSlice.actions
+export const {initMap,changeElement,restartGame} = gameSlice.actions
 
 export default gameSlice.reducer
