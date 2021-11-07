@@ -133,19 +133,13 @@ function HighScore() {
   //TODO CHECKOUT ID 3
 
   return (
-    <div style={
-      {
-        overflowY: "auto",
-        height:"100vh",
+    <div
+    className="highscore"
+    >
+
     
-      }
-    }>
 
-      <div className="back" onClick={handleBack}>
-       <Link to="/">new Game</Link>
-      </div>
-
-      <table className="highscore" >
+      <table className="highscoreTable" >
         <thead>
         <tr>
           <th>#</th>
@@ -173,6 +167,9 @@ function HighScore() {
         </tbody>
       </table>
       <div className="sort">
+
+      <button> <Link to="/">New Game</Link></button>
+
       <button onClick={sortBasicHandler}>Sort by Simple Score</button>
       <button onClick={sortSmartHandler}>Sort by Smart score</button>
       </div>

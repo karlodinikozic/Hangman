@@ -86,10 +86,10 @@ describe('Testing “smarter” function for calculating the score', () => {
     })
 
     it('given the same number of errors, unique letters, and quote length, faster solutions should be scored higher',()=>{
-        let time_num_1 = 8590
-        let time_num_2 = 12030
-        let time_num_3 = 54770
-        let time_num_4 = 10230
+        let time_num_1 = 859
+        let time_num_2 = 1203
+        let time_num_3 = 5477
+        let time_num_4 = 1023
 
         const number_of_errors = 5
         const number_of_unique = 115
@@ -101,14 +101,13 @@ describe('Testing “smarter” function for calculating the score', () => {
         let res_3 = smarterCalulateScore(number_of_length,number_of_unique,number_of_errors,time_num_3)
         let res_4 = smarterCalulateScore(number_of_length,number_of_unique,number_of_errors,time_num_4)
 
-        console.log(res_1,res_4,res_2,res_3)
 
         let help_bool = res_1 > res_4
         help_bool = help_bool && res_4 > res_2
         help_bool = help_bool && res_2 > res_3
         expect(help_bool).toBeTruthy();
 
-        let time_num_5 = 8590
+        let time_num_5 = 859
         let res_5 = smarterCalulateScore(number_of_length,number_of_unique,number_of_errors,time_num_5)
         expect(res_1==res_5).toBeTruthy();
     })
