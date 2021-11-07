@@ -17,11 +17,6 @@ function Game(props) {
     
     const done = useSelector(state => state.game.value.done)
 
-        
-    const game = useSelector(state => state.game.value)
-
-
-    useEffect(()=>console.log(game),[game])
 
     const dispatch = useDispatch()
 
