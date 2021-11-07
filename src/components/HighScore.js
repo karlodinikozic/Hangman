@@ -10,10 +10,15 @@ import Spinner from "./Spinner.js";
 
 import "../style/highscore.css";
 
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+
 function HighScore() {
   const gameData = useSelector((state) => state.game.value);
   const userData = useSelector((state) => state.user.value);
   const gameInfo = useSelector((state) => state.gameInfo.value);
+
+  const history = useHistory()
 
   const [highScore, setHighScore] = useState([]);
 
@@ -84,9 +89,20 @@ function HighScore() {
     setHighScore([...arr]);
   };
 
+  const handleBack = ()=>{
+    let path = `/`;
+    history.push(path) 
+ 
+  }
+
   useEffect(async () => {
-    await postGameData();
-    await getHighScore();
+    try {
+      // await postGameData();
+      // await getHighScore();
+    } catch (error) {
+      console.log(error)
+    }
+  
   }, []);
 
   if (highScore.length == 0) {
@@ -99,12 +115,19 @@ function HighScore() {
   return (
     <div style={
       {
-        overflow: "auto",
+        overflowY: "auto",
         height:"100vh",
     
       }
     }>
+
+      <div className="back"  >
+      <button ><Link to="/"> New Game </Link></button>
+   
+      </div>
+
       <table className="highscore" >
+        <thead>
         <tr>
           <th>#</th>
           <th>id</th>
@@ -113,6 +136,8 @@ function HighScore() {
           <th>Score</th>
           <th>SmartScore</th>
         </tr>
+        </thead>
+        <tbody>
         {highScore.map((el, indx) => {
           return (
             <tr key={indx}>
@@ -126,6 +151,7 @@ function HighScore() {
             </tr>
           );
         })}
+        </tbody>
       </table>
       <div className="sort">
       <button onClick={sortBasicHandler}>Sort by Simple Score</button>

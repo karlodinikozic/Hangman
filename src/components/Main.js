@@ -12,7 +12,7 @@ function Main() {
     const gameLoadingState = useSelector((state)=>state.gameInfo.value)
 
  
-    const done = useSelector(state => state.game.value.done)
+   
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -22,15 +22,12 @@ function Main() {
     
 
     if(gameLoadingState.loading != 'loaded' ){
-
         //TODO https://www.framer.com/docs/animate-presence/
         return <Spinner/>
     }
 
 
-    if(done){
-        return <HighScore/>
-    }
+  
 
     return (
         <div className='main'>

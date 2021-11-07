@@ -40,7 +40,9 @@
   flex-direction: column;
 }
 
-.sort button{
+
+
+.sort button, .back button{
   color:white;
   background-color: rgb(48, 107, 216);
   border: 1px solid rgb(19, 79, 190);
@@ -53,7 +55,7 @@
   transition: color 0.5s, border-color 0.25s, box-shadow 0.25s,transform 0.15s;
 }
 
-.sort button:hover{
+.sort button:hover, .back button:hover{
   transform: scale(1.1)  translateY(-0.15em);
     background-color: rgb(249, 251, 255) ;
     color: rgb(77, 9, 238);
@@ -61,11 +63,17 @@
     margin-top:10px ;
     transition: color 0.1s, border-color 0.25s, box-shadow 0.25s,transform 0.15s;
 }
-.sort button:active{
+.sort button:active, .back button:active{
   
     background-color: rgb(77, 9, 238) ;
     color: rgb(249, 251, 255);
+}
 
-  
+.back  {
+  position: fixed;
+  top: 60px;
+  left: 180px;
+  display: flex;
+  flex-direction: column;
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router';
 import { initMap } from '../../features/game';
 import { fetchGameInfo } from '../../features/gameInfo';
 import HangMan from './HangMan';
@@ -12,6 +13,8 @@ function Game(props) {
 
 
     const errors = useSelector(state => state.game.value.errors)
+    
+    const done = useSelector(state => state.game.value.done)
 
     const dispatch = useDispatch()
   
@@ -25,7 +28,9 @@ function Game(props) {
         dispatch(fetchGameInfo());
     }
 
-   
+   if(done){
+    return <Redirect to="/highscore" />
+   }
 
     return (
         <div className="game">

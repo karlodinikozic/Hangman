@@ -5,9 +5,9 @@ import Main from './components/Main';
 import { useDispatch } from 'react-redux'
 import './app.css'
 import { login } from './features/user';
+import HighScore from './components/HighScore';
 
 function App() {
-
 
 
   const dispatch = useDispatch()
@@ -34,10 +34,10 @@ function App() {
       
       <Router> 
         <Switch>
-          <Route exact path="/"  >
-            <Main/>
-
-          </Route>
+          <Route exact path="/" component={Main} />
+       
+          <Route exact path="/highscore" component={HighScore} />
+    
 
         </Switch>
       </Router>      
